@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas" width="1000" height="600" style="border: 1px solid red"></canvas>
+<script>
+    class Rectangle {
+        constructor(x, y, width, height) {
+            this.x = x;
+            this.y = y;
+            this.width = width;
+            this.height = height;
+        }
+        renderRec(){
+            let canvas = document.getElementById('myCanvas');
+            let pen = canvas.getContext('2d');
+            pen.beginPath();
+            pen.rect(this.x, this.y, this.width, this.height);
+            pen.fill();
+        }
+        getWidth(){
+            return this.width
+        }
+        getHeight(){
+            return this.height
+        }
+        getAcreage(){
+            let acreage = this.width*this.height
+            return acreage;
+        }
+
+        getPerimeter(){
+            let perimeter = (this.width+this.height)*2
+            return perimeter
+        }
+        moveRight(){
+            this.x+=5
+        }
+    }
+    let rect = new Rectangle(400, 250, 200, 100);
+    rect.renderRec()
+
+    // console.log('chiều dài: '+ rect.getWidth())
+    // console.log('chiều rộng: ' + rect.getHeight())
+    // console.log('diện tích Rect: ' +rect.getAcreage())
+    // console.log('chu vi Rect: '+rect.getPerimeter() )
+</script>
+</body>
+</html>

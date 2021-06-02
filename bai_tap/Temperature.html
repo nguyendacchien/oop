@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  class Temperature{
+    constructor(celsius) {
+      this._celsius=celsius;
+    }
+    getCelsius(){
+      return this._celsius
+    }
+    setCelsius(value){
+      this._celsius=value
+    }
+    convertFahrenheit(){
+      return this._celsius*9/5 +32
+    }
+    convertKelvin(){
+      return this._celsius+273
+    }
+  }
+  let temp = new Temperature(20)
+  alert('The temperature degrees Fahrenheit and degrees Kelvin are: '+ temp.convertFahrenheit()+ ' / ' +temp.convertKelvin())
+</script>
+</body>
+</html>

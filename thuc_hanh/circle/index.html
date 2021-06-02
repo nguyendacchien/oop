@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas" width="1500px" height="700px" style="border: 1px solid red"></canvas>
+<script>
+    class Circle {
+        constructor(x, y, radius) {
+            this.x = x;
+            this.y = y;
+            this.radius = radius;
+        }
+
+        getRandomHex() {
+            return Math.floor(Math.random() * 225); //sinh ra ngẫu nhiên trong khoảng 0-225
+        }
+
+        getRandomColor() {  // sinh ra màu ngẫu nhiên
+            let red = this.getRandomHex();
+            let green = this.getRandomHex();
+            let blue = this.getRandomHex();
+            return "rgb(" + red + ',' + blue + ',' + green + ")"
+        }
+
+        createCircle() {   // vẽ hình tròn
+            let ctx = document.getElementById('myCanvas').getContext('2d');//bút vẽ
+            ctx.beginPath(); //đặt bút
+            ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
+            ctx.fillStyle = color
+            ctx.fill()
+
+        }
+
+    }
+    let color; // tạo biết màu trong hàm
+    function createMultipleCircle() {
+        for (let i = 0; i < 50; i++) {
+            let radius = Math.floor(Math.random() * 20); //random bán kính
+            let y = Math.floor(Math.random() * 700); //let 1 lần thôi
+            let x = Math.floor(Math.random() * 1500);
+            let circle = new Circle(x, y, radius); // khai báo đối tượng 1
+             color = circle.getRandomColor() // random màu
+            circle.createCircle(); //tạo đối tượng
+
+        }
+    }
+
+    createMultipleCircle()
+
+
+</script>
+</body>
+</html>

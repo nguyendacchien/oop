@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class MyDate {
+        constructor(day, month, year) {
+            this.day = day;
+            this.month = month;
+            this.year = year;
+        }
+
+        getDay() {
+            return this.day;
+        }
+
+        getMonth() {
+            return this.month
+        }
+
+        getYear() {
+            return this.year
+        }
+
+        setDay(day) {
+            this.day = day
+        }
+
+        setMonth(month) {
+            this.month = month
+        }
+
+        setYear(year) {
+            this.year = year
+        }
+
+        setDate(day, month, year) {
+            this.day = day;
+            this.month = month;
+            this.year = year;
+        }
+
+        displayDate() {
+            alert(this.day + '/' + this.month + '/' + this.year)
+        }
+    }
+
+    let Date = new MyDate(10, 10, 2010);
+    // gọi phương thức để hiển thị ra đối số truyền vào của Date
+    Date.getDay();
+    Date.getMonth();
+    Date.getYear();
+    Date.displayDate()
+    // Date.setDate(2, 2, 2002)     //cách 2
+    // đặt lại giá trị của Date và hiển thị
+    Date.setDay(2)
+    Date.setMonth(2)
+    Date.setYear(2002)
+    Date.displayDate()
+</script>
+</body>
+</html>

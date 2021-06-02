@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js.js"></script>
+</head>
+<body>
+<script>
+    let samsung = new Mobile("Samsung Galaxy S21")
+    let iphone = new Mobile("Iphone 12 Pro Max")
+    alert(samsung.displayMobile())
+    samsung.turnOn()
+    samsung.writeMessage("hello Iphone")
+    samsung.sendMessage(iphone)
+    console.log(samsung.displayMobile())
+    console.log(samsung.getOutbox())
+    iphone.turnOn()
+    console.log(iphone.getInbox())
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas" width="1800px" height="1400px" style="border: 1px solid red"></canvas>
+<script>
+class Circle{
+    constructor(x, y, radius) {
+        this.x=x;
+        this.y=y;
+        this.radius=radius;
+    }
+    getRandomHex(){
+        return Math.floor(Math.random()*225); //sinh ra ngẫu nhiên trong khoảng 0-225
+    }
+    getRandomColor(){  // sinh ra màu ngẫu nhiên
+        let red =this.getRandomHex();
+        let green =this.getRandomHex();
+        let blue =this.getRandomHex();
+        return "rgb("+ red+ ',' + blue+ ','+ green+ ")"
+    }
+    createCircle(){   // vẽ hình tròn
+        let ctx = document.getElementById('myCanvas').getContext('2d');
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius,0,2*Math.PI);
+        ctx.fillStyle=color
+        ctx.fill()
+
+    }
+}
+let radius= Math.floor(Math.random()*150) //random bán kính
+let y = Math.floor(Math.random()* window.innerHeight) //let 1 lần thôi
+let x = Math.floor(Math.random()* window.innerWidth)
+let circle = new Circle(x, y, radius); // khai báo đối tượng 1
+ y = Math.floor(Math.random()* window.innerHeight) // random lại
+ x = Math.floor(Math.random()* window.innerWidth)
+let circle1 = new Circle(x, y, radius); // khai báo đối tượng 2
+let color =circle.getRandomColor() //hàm random màu
+circle.createCircle() //tạo đối tượng
+circle1.createCircle()
+</script>
+</body>
+</html>
